@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-char	*ft_dec_to_hex(unsigned int nbr, char type)
+char		*ft_dec_to_hex(unsigned int nbr, char type)
 {
-	char *ret;
-	int rest;
-	int maj_min;
+	char	*ret;
+	int		rest;
+	int		maj_min;
 
 	rest = 0;
 	ret = ft_strdup("");

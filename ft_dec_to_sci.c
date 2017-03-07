@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-char	*ft_dec_to_sci(double nbr, char type, char *pre)
+char		*ft_dec_to_sci(double nbr, char type, char *pre)
 {
-	char *ret;
-	int exp;
-	int prec;
+	char	*ret;
+	int		exp;
+	int		prec;
 
 	exp = 0;
 	ret = ft_strdup("");
