@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chrjoin_free.c                                  :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heinfalt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/06 18:27:14 by heinfalt          #+#    #+#             */
-/*   Updated: 2017/03/06 18:27:20 by heinfalt         ###   ########.fr       */
+/*   Created: 2017/03/07 11:04:52 by heinfalt          #+#    #+#             */
+/*   Updated: 2017/03/07 11:04:53 by heinfalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_chrjoin_free(char *s, const char c, int flag)
+double		ft_pow(int nbr, int power)
 {
-	char	*new;
-	int		i;
+	double ret;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 2));
-	while (s[i])
+	ret = (double)(nbr);
+	while (power != 0)
 	{
-		new[i] = s[i];
-		i++;
+		ret = (power > 0 ? (double)(ret * nbr) : (double)(ret / nbr));
+		power = (power > 0 ? power - 1 : power + 1);
 	}
-	new[i++] = c;
-	new[i] = '\0';
-	if (flag == 1)
-		free(s);
-	return (new);
+	return (ret);
 }

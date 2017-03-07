@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
 # include <string.h>
 
@@ -65,6 +66,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_itoa(int n);
 char				*ft_strrev(char *str);
+char				*ft_dbltoa(double nbr, int pre);
 char				*ft_strnew(size_t size);
 char				*ft_strtrim(const char *s);
 char				*ft_strdup(const char *str);
@@ -74,15 +76,19 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strmap(char const *s, char (*f)(char));
+char				*ft_dec_to_base(unsigned int nbr, int base);
+char				*ft_dec_to_hex(unsigned int nbr, char type);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strncpy(char *dest, char *src, size_t n);
 char				*ft_strstr(const char *big, const char *lil);
+char				*ft_dec_to_sci(double nbr, char type, char *pre);
 char				*ft_strjoin_free(char *s1, char *s2, char flag);
 char				*ft_chrjoin_free(char *s, const char c, int flag);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strnstr(const char *big, const char *lil, size_t len);
+double				ft_pow(int nbr, int power);
 void				ft_putnbr(int n);
 void				ft_strclr(char *s);
 void				ft_putchar(char c);

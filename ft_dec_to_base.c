@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chrjoin_free.c                                  :+:      :+:    :+:   */
+/*   ft_dec_to_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heinfalt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/06 18:27:14 by heinfalt          #+#    #+#             */
-/*   Updated: 2017/03/06 18:27:20 by heinfalt         ###   ########.fr       */
+/*   Created: 2017/03/06 19:48:18 by heinfalt          #+#    #+#             */
+/*   Updated: 2017/03/06 19:48:20 by heinfalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_chrjoin_free(char *s, const char c, int flag)
+char	*ft_dec_to_base(unsigned int nbr, int base)
 {
-	char	*new;
-	int		i;
+	int rest;
+	int ret;
+	int i;
 
-	if (!s)
-		return (NULL);
-	i = 0;
-	new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 2));
-	while (s[i])
+	rest = 0;
+	ret = 0;
+	i = 1;
+	while (nbr)
 	{
-		new[i] = s[i];
-		i++;
+		rest = nbr % base;
+		nbr = nbr / base;
+		ret += (rest * i);
+		i *= 10;
 	}
-	new[i++] = c;
-	new[i] = '\0';
-	if (flag == 1)
-		free(s);
-	return (new);
+	return (ft_itoa(ret));
 }

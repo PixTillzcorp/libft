@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chrjoin_free.c                                  :+:      :+:    :+:   */
+/*   ft_dec_to_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heinfalt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/06 18:27:14 by heinfalt          #+#    #+#             */
-/*   Updated: 2017/03/06 18:27:20 by heinfalt         ###   ########.fr       */
+/*   Created: 2017/03/06 19:48:33 by heinfalt          #+#    #+#             */
+/*   Updated: 2017/03/06 19:48:35 by heinfalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_chrjoin_free(char *s, const char c, int flag)
+char	*ft_dec_to_hex(unsigned int nbr, char type)
 {
-	char	*new;
-	int		i;
+	char *ret;
+	int rest;
+	int maj_min;
 
-	if (!s)
+	rest = 0;
+	ret = ft_strdup("");
+	if (type != 'x' && type != 'X')
 		return (NULL);
-	i = 0;
-	new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 2));
-	while (s[i])
+	maj_min = (type == 'x' ? 97 : 65);
+	while (nbr)
 	{
-		new[i] = s[i];
-		i++;
+		rest = nbr % 16;
+		nbr = nbr / 16;
+		if (rest >= 10)
+			ret = ft_chrjoin_free(ret, (maj_min + (rest % 10)), 1);
+		else
+			ret = ft_strjoin_free(ret, ft_itoa(rest), 'l');
 	}
-	new[i++] = c;
-	new[i] = '\0';
-	if (flag == 1)
-		free(s);
-	return (new);
+	return (ft_strrev(ret));
 }
