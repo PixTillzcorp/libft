@@ -6,7 +6,7 @@
 /*   By: heinfalt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 09:56:32 by heinfalt          #+#    #+#             */
-/*   Updated: 2016/11/09 09:56:35 by heinfalt         ###   ########.fr       */
+/*   Updated: 2017/03/22 13:08:40 by heinfalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,7 @@ char				*ft_strnew(size_t size);
 char				*ft_ptr_to_hex(void *ptr);
 char				*ft_strtrim(const char *s);
 char				*ft_strdup(const char *str);
-<<<<<<< HEAD
 char				*ft_litoa(long long int nbr);
-=======
->>>>>>> 03051979b076ed2b15e429cbea50f6e0c0ff668b
 char				*ft_dbltoa(double nbr, int pre);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
@@ -102,10 +99,7 @@ void				ft_putchar(char c);
 void				ft_memdel(void **ap);
 void				ft_strdel(char **as);
 void				ft_putlchar(wchar_t c);
-<<<<<<< HEAD
-=======
 void				ft_putlstr(wchar_t *s);
->>>>>>> 03051979b076ed2b15e429cbea50f6e0c0ff668b
 void				ft_swap(int *a, int *b);
 void				ft_putendl(char const *s);
 void				ft_putstr(char const *s);

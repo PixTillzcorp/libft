@@ -18,9 +18,12 @@ char		*ft_dec_to_sci(double nbr, char type, char *pre)
 	int		exp;
 	int		prec;
 
+	ft_putstr("pre = ");
+	ft_putstr(pre);
+	ft_putchar('\n');
 	exp = 0;
 	ret = ft_strdup("");
-	prec = (pre == NULL ? 6 : ft_atoi(pre));
+	prec = (!ft_strcmp(pre, "0") ? 6 : ft_atoi(pre));
 	if (nbr * -1 > 0)
 	{
 		nbr *= -1;
