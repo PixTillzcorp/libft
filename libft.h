@@ -70,6 +70,10 @@ char				*ft_strnew(size_t size);
 char				*ft_ptr_to_hex(void *ptr);
 char				*ft_strtrim(const char *s);
 char				*ft_strdup(const char *str);
+<<<<<<< HEAD
+char				*ft_litoa(long long int nbr);
+=======
+>>>>>>> 03051979b076ed2b15e429cbea50f6e0c0ff668b
 char				*ft_dbltoa(double nbr, int pre);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
@@ -86,24 +90,31 @@ char				*ft_dec_to_sci(double nbr, char type, char *pre);
 char				*ft_strjoin_free(char *s1, char *s2, char flag);
 char				*ft_chrjoin_free(char *s, const char c, int flag);
 char				*ft_strncat(char *dest, const char *src, size_t n);
+char				*ft_ldec_to_base(long long int nbr, long long int base);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strnstr(const char *big, const char *lil, size_t len);
 double				ft_pow(int nbr, int power);
+long long			ft_initlmod(long long int nbr, long long int mod);
 void				ft_putnbr(int n);
 void				ft_strclr(char *s);
 void				ft_putchar(char c);
 void				ft_memdel(void **ap);
 void				ft_strdel(char **as);
 void				ft_putlchar(wchar_t c);
+<<<<<<< HEAD
+=======
 void				ft_putlstr(wchar_t *s);
+>>>>>>> 03051979b076ed2b15e429cbea50f6e0c0ff668b
 void				ft_swap(int *a, int *b);
 void				ft_putendl(char const *s);
 void				ft_putstr(char const *s);
 void				*ft_memalloc(size_t size);
+void				ft_putlnbr(long long int n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_bzero(void *s, size_t n);
 void				ft_putchar_fd(char c, int fd);
+void				ft_putlstr(wchar_t *s);
 void				ft_charswap(char *chr1, char *chr2);
 void				ft_putstr_fd(char const *s, int fd);
 void				*ft_memset(void *s, int c, size_t n);
