@@ -12,5 +12,7 @@ void	ft_putnstr(const char *str, int n)
 			while (str[i] && i < n)
 				ft_putchar(str[i++]);
 		}
+		else if (n < 0)
+			ft_putstr(str);
 	}
 }

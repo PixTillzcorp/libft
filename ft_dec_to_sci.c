@@ -18,9 +18,6 @@ char		*ft_dec_to_sci(double nbr, char type, char *pre)
 	int		exp;
 	int		prec;
 
-	ft_putstr("pre = ");
-	ft_putstr(pre);
-	ft_putchar('\n');
 	exp = 0;
 	ret = ft_strdup("");
 	prec = (!ft_strcmp(pre, "0") ? 6 : ft_atoi(pre));
@@ -29,7 +26,7 @@ char		*ft_dec_to_sci(double nbr, char type, char *pre)
 		nbr *= -1;
 		ret = ft_chrjoin_free(ret, '-', 1);
 	}
-	while (nbr > 10.0 || nbr < 1)
+	while (nbr > 10 || nbr < 1)
 	{
 		exp = (nbr < 1 ? exp - 1 : exp + 1);
 		nbr = (nbr < 1 ? nbr * 10 : nbr / 10);
