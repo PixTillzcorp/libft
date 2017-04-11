@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char		*ft_dec_to_hex(unsigned int nbr, char type)
+char		*ft_dec_to_hex(unsigned int nbr, char type, int pre)
 {
 	char	*ret;
 	int		rest;
@@ -22,6 +22,12 @@ char		*ft_dec_to_hex(unsigned int nbr, char type)
 	ret = ft_strdup("");
 	if (type != 'x' && type != 'X')
 		return (NULL);
+	else if (!nbr)
+	{
+		if (!pre)
+			return (NULL);
+		return ("0");
+	}
 	maj_min = (type == 'x' ? 97 : 65);
 	while (nbr)
 	{

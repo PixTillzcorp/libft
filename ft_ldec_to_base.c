@@ -12,21 +12,26 @@
 
 #include "libft.h"
 
-char				*ft_ldec_to_base(long long int nbr, long long int base)
+char				*ft_ldec_to_base(long long nbr, long long base, int pre, char *flag)
 {
-	long long int	rest;
-	long long int	ret;
-	long long int	i;
+	long long		rest;
+	char			*ret;
 
 	rest = 0;
-	ret = 0;
-	i = 1;
+	ret = ft_strdup("");
+	if (!nbr)
+	{
+		if (!pre)
+			return (NULL);
+		return ("0");
+	}
 	while (nbr)
 	{
 		rest = nbr % base;
 		nbr = nbr / base;
-		ret += (rest * i);
-		i *= 10;
+		ret = ft_chrjoin_free(ret, (48 + rest), 1);
 	}
-	return (ft_litoa(ret));
+	if (ft_strlen(ret = ft_strrev(ret)) < pre && ft_strchr(flag, '-'))
+		ret = ft_strjoin_free("0", ret, 'r');
+	return (ret);
 }

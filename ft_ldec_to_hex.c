@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char					*ft_ldec_to_hex(unsigned long long nbr, char type)
+char					*ft_ldec_to_hex(unsigned long long nbr, char type, int pre)
 {
 	char				*ret;
 	int					rest;
@@ -10,6 +10,12 @@ char					*ft_ldec_to_hex(unsigned long long nbr, char type)
 	ret = ft_strdup("");
 	if (type != 'x' && type != 'X')
 		return (NULL);
+	else if (!nbr)
+	{
+		if (!pre)
+			return (NULL);
+		return ("0");
+	}
 	maj_min = (type == 'x' ? 97 : 65);
 	while (nbr)
 	{
