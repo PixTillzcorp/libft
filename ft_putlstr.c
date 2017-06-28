@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putlstr(wchar_t *s)
+void	ft_putlstr(wint_t *s)
 {
 	int i;
 
@@ -20,6 +20,6 @@ void	ft_putlstr(wchar_t *s)
 	if (s != NULL)
 	{
 		while (s[i])
-			ft_putchar(s[i++]);
+			ft_putwchar(s[i++]);
 	}
 }

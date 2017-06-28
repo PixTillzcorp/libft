@@ -10,12 +10,10 @@ char					*ft_ldec_to_hex(unsigned long long nbr, char type, int pre)
 	ret = ft_strdup("");
 	if (type != 'x' && type != 'X')
 		return (NULL);
+	else if (!nbr && !pre)
+		return (NULL);
 	else if (!nbr)
-	{
-		if (!pre)
-			return (NULL);
 		return ("0");
-	}
 	maj_min = (type == 'x' ? 97 : 65);
 	while (nbr)
 	{
@@ -26,5 +24,7 @@ char					*ft_ldec_to_hex(unsigned long long nbr, char type, int pre)
 		else
 			ret = ft_strjoin_free(ret, ft_itoa(rest), 'l');
 	}
+	while ((int)ft_strlen(ret) < pre)
+		ret = ft_strjoin_free(ret, "0", 'l');
 	return (ft_strrev(ret));
 }

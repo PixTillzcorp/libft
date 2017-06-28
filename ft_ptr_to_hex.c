@@ -20,7 +20,7 @@ char	*ft_ptr_to_hex(void *ptr)
 
 	rest = 0;
 	nbr = (long)(ptr);
-	ret = ft_strdup("");
+	ret = (ptr == NULL ? ft_strdup("0") : ft_strdup(""));
 	while (nbr)
 	{
 		rest = nbr % 16;

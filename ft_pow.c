@@ -17,6 +17,9 @@ double		ft_pow(int nbr, int power)
 	double ret;
 
 	ret = (double)(nbr);
+	if (!power)
+		return (1);
+	power = (power > 0 ? power - 1 : power + 1);
 	while (power != 0)
 	{
 		ret = (power > 0 ? (double)(ret * nbr) : (double)(ret / nbr));

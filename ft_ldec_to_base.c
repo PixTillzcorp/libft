@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char				*ft_ldec_to_base(long long nbr, long long base, int pre, char *flag)
+char					*ft_ldec_to_base(unsigned long long nbr, char *flag, long long base, int pre)
 {
-	long long		rest;
-	char			*ret;
+	unsigned long long	rest;
+	char				*ret;
 
 	rest = 0;
 	ret = ft_strdup("");
@@ -31,7 +31,8 @@ char				*ft_ldec_to_base(long long nbr, long long base, int pre, char *flag)
 		nbr = nbr / base;
 		ret = ft_chrjoin_free(ret, (48 + rest), 1);
 	}
-	if (ft_strlen(ret = ft_strrev(ret)) < pre && ft_strchr(flag, '-'))
+	ret = ft_strrev(ret);
+	while ((int)ft_strlen(ret) + (ft_strchr(flag, '#') ? 1 : 0) < pre)
 		ret = ft_strjoin_free("0", ret, 'r');
 	return (ret);
 }

@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-long long			ft_initlmod(long long int nbr, long long int mod)
+unsigned long long			ft_initlmod(unsigned long long nbr, unsigned long long mod)
 {
-	long long int	check;
-	long long int	i;
+	unsigned long long	check;
+	unsigned long long	i;
 
 	check = 0;
 	i = 1;

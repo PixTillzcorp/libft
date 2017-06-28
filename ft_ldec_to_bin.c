@@ -1,9 +1,9 @@
 #include "libft.h"
 
-char	*ft_ldec_to_bin(long long nbr)
+char	*ft_ldec_to_bin(unsigned long long nbr)
 {
 	char *ret;	
-	long long mod;
+	unsigned long long mod;
 
 	mod = 9223372036854775807;
 	ret = ft_strdup("");
